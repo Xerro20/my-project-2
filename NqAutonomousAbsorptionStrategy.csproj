@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>NqAutonomousAbsorptionStrategy</AssemblyName>
+    <RootNamespace>ATAS.Strategies</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);CA1416;CS8002;CS8632;MSB3277</NoWarn>
+  </PropertyGroup>
+
+  <!-- Détection automatique de l'installation ATAS X ou ATAS Platform sous Windows -->
+  <PropertyGroup>
+    <ATAS_BASE Condition=" '$(ATAS_BASE)' == '' And Exists('C:\Program Files\ATAS X\ATAS.Indicators.dll') ">C:\Program Files\ATAS X</ATAS_BASE>
+    <ATAS_BASE Condition=" '$(ATAS_BASE)' == '' And Exists('C:\Program Files (x86)\ATAS Platform\ATAS.Indicators.dll') ">C:\Program Files (x86)\ATAS Platform</ATAS_BASE>
+    <ATAS_BASE Condition=" '$(ATAS_BASE)' == '' And Exists('$(LOCALAPPDATA)\ATAS X\ATAS.Indicators.dll') ">$(LOCALAPPDATA)\ATAS X</ATAS_BASE>
+    <ATAS_BASE Condition=" '$(ATAS_BASE)' == '' And Exists('$(LOCALAPPDATA)\ATAS\ATAS.Indicators.dll') ">$(LOCALAPPDATA)\ATAS</ATAS_BASE>
+    <ATAS_BASE Condition=" '$(ATAS_BASE)' == '' ">$(MSBuildThisFileDirectory)ref</ATAS_BASE>
+  </PropertyGroup>
+
+  <!-- Cible ATAS X (Cross-Platform .NET 8 / .NET 10) ou ATAS Windows -->
+  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' And Exists('C:\Program Files (x86)\ATAS Platform\ATAS.Indicators.dll') And !Exists('C:\Program Files\ATAS X\ATAS.Indicators.dll') ">
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == '' ">
+    <TargetFramework>net8.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);CROSS_PLATFORM</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ATAS.DataFeedsCore">
+      <HintPath>$(ATAS_BASE)\ATAS.DataFeedsCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ATAS.Indicators">
+      <HintPath>$(ATAS_BASE)\ATAS.Indicators.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ATAS.Strategies">
+      <HintPath>$(ATAS_BASE)\ATAS.Strategies.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Utils.Common">
+      <HintPath>$(ATAS_BASE)\Utils.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Copie automatique de la DLL compilée dans le dossier Strategies d'ATAS X sous Windows -->
+  <Target Name="PostBuildDeployAtas" AfterTargets="Build" Condition=" '$(OS)' == 'Windows_NT' ">
+    <MakeDir Directories="$(USERPROFILE)\Documents\ATAS\Strategies" Condition="!Exists('$(USERPROFILE)\Documents\ATAS\Strategies')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(USERPROFILE)\Documents\ATAS\Strategies" SkipUnchangedFiles="false" ContinueOnError="true" />
+  </Target>
+
+</Project>
