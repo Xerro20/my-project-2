@@ -1,0 +1,5 @@
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.csproj.AssemblyReference.cache
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.GeneratedMSBuildEditorConfig.editorconfig
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.AssemblyInfoInputs.cache
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.AssemblyInfo.cs
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.csproj.CoreCompileInputs.cache
