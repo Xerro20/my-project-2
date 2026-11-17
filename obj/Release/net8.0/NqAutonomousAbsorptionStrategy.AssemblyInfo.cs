@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NqAutonomousAbsorptionStrategy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+182a85a6a7b19bae59760d5c1cb448cf6f25d92d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38ea25f28cc3af71b1a040cef5e0a5d3cf6d82bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("NqAutonomousAbsorptionStrategy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NqAutonomousAbsorptionStrategy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
