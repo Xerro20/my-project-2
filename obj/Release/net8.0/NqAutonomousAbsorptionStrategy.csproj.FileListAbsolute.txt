@@ -3,3 +3,10 @@
 /home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.AssemblyInfoInputs.cache
 /home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.AssemblyInfo.cs
 /home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.csproj.CoreCompileInputs.cache
+/home/agent/workspace/dist/NqAutonomousAbsorptionStrategy.deps.json
+/home/agent/workspace/dist/NqAutonomousAbsorptionStrategy.dll
+/home/agent/workspace/dist/NqAutonomousAbsorptionStrategy.pdb
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.dll
+/home/agent/workspace/obj/Release/net8.0/refint/NqAutonomousAbsorptionStrategy.dll
+/home/agent/workspace/obj/Release/net8.0/NqAutonomousAbsorptionStrategy.pdb
+/home/agent/workspace/obj/Release/net8.0/ref/NqAutonomousAbsorptionStrategy.dll
