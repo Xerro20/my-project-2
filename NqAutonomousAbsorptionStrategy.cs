@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using ATAS.DataFeedsCore;
 using ATAS.Indicators;
-using ATAS.Indicators.Technical;
 using ATAS.Strategies;
 using ATAS.Strategies.Chart;
 using OF.Core.Data;
